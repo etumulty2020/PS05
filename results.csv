@@ -1,0 +1,13 @@
+k,question_id,keyword_top_ids,keyword_scores,embedding_top_ids,embedding_scores,required_ids,keyword_evidence_complete,embedding_evidence_complete,observation
+1,Q1,A1,3,A2,0.6864456878,A1;A2,no,no,We forced k=1 so it had to choose only one high scoring keyword and embedding loosing the second required ID. Keywords and embeddigns did not give the highest score to the same IDs. 
+1,Q2,A2,2,A2,0.5851933325,A2,yes,yes,Keywords and embeddings both gave the highest scores to the same required IDs.
+1,Q3,T1,2,T1,0.7420273786,T1,yes,yes,Keywords and embeddings both gave the highest scores to the same required IDs.
+1,Q4,A2,1,T1,0.3477212227,absent,no,no,We forced k=1 so it had to choose at lease one ID when we really didn’t want it choose anything at all 
+2,Q1,A1;A2,3;2,A2;T1,0.6864456878;0.5819528175,A1;A2,yes,partial,Embeddings is still missing A1
+2,Q2,A2;B1,2;1,A2;T1,0.5851933325;0.4347606030,A2,yes,yes,We forced k=2 so the evidence holds extraneous required IDs
+2,Q3,T1;A2,2;1,T1;B1,0.7420273786;0.4711952400,T1,yes,yes,We forced k=2 so the evidence holds extraneous required IDs
+2,Q4,A2;B1,1;1,T1;A2,0.3477212227;0.3208271317,absent,no,no,We forced k=2 so the evidence holds extraneous required IDs
+3,Q1,A1;A2;B1,3;2;1,A2;T1;B1,0.6864456878;0.5819528175;0.5326960339,A1;A2,yes,partial,"Keywords has too many terms because we forced k=3, A1 is still not captured as required ID by embeddings"
+3,Q2,A2;B1;T1,2;1;1,A2;T1;B1,0.5851933325;0.4347606030;0.4253561416,A2,yes,yes,We forced k=3 so while the evidence is complere it also includes extraneous IDs. 
+3,Q3,T1;A2;B1,2;1;1,T1;B1;A2,0.7420273786;0.4711952400;0.4492573944,T1,yes,yes,We forced k=3 so while the evidence is complere it also includes extraneous IDs. 
+3,Q4,A2;B1;T1,1;1;1,T1;A2;B1,0.3477212227;0.3208271317;0.3115009478,absent,No ,No ,We forced k=3 so keywords and embeddings and returning results when they shouldn’t be. 

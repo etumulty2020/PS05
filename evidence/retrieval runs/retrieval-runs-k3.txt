@@ -1,0 +1,299 @@
+Keyword retrieval: k=3
+
+Q1
+Question: May a trained graduate student operate the laser alone at 19:00?
+k: 3
+
+All chunk scores (descending score, then ascending ID):
+A1 | score=3 | matched words: 00, graduate, trained
+A2 | score=2 | matched words: laser, trained
+B1 | score=1 | matched words: laser
+T1 | score=1 | matched words: laser
+T2 | score=1 | matched words: trained
+B2 | score=0 | matched words: (none)
+
+Selected passages:
+[A1] access.txt | score=3
+General laboratory access hours are 08:00 to 22:00 for trained graduate students. Access outside these hours requires written approval from the lab manager.
+
+[A2] access.txt | score=2
+The laser room requires two trained people to be present whenever the laser is operating, including during general laboratory access hours.
+
+[B1] booking.txt | score=1
+Laser room bookings are limited to two hours per session. Reserve the room through the equipment calendar.
+
+
+Q2
+Question: Can I use the laser without another person present?
+k: 3
+
+All chunk scores (descending score, then ascending ID):
+A2 | score=2 | matched words: laser, present
+B1 | score=1 | matched words: laser
+T1 | score=1 | matched words: laser
+A1 | score=0 | matched words: (none)
+B2 | score=0 | matched words: (none)
+T2 | score=0 | matched words: (none)
+
+Selected passages:
+[A2] access.txt | score=2
+The laser room requires two trained people to be present whenever the laser is operating, including during general laboratory access hours.
+
+[B1] booking.txt | score=1
+Laser room bookings are limited to two hours per session. Reserve the room through the equipment calendar.
+
+[T1] training.txt | score=1
+Laser training must be renewed every 12 months. A current training record is required before operating the laser.
+
+
+Q3
+Question: How frequently must I refresh my laser qualification?
+k: 3
+
+All chunk scores (descending score, then ascending ID):
+T1 | score=2 | matched words: laser, must
+A2 | score=1 | matched words: laser
+B1 | score=1 | matched words: laser
+A1 | score=0 | matched words: (none)
+B2 | score=0 | matched words: (none)
+T2 | score=0 | matched words: (none)
+
+Selected passages:
+[T1] training.txt | score=2
+Laser training must be renewed every 12 months. A current training record is required before operating the laser.
+
+[A2] access.txt | score=1
+The laser room requires two trained people to be present whenever the laser is operating, including during general laboratory access hours.
+
+[B1] booking.txt | score=1
+Laser room bookings are limited to two hours per session. Reserve the room through the equipment calendar.
+
+
+Q4
+Question: What is the laser wavelength?
+k: 3
+
+All chunk scores (descending score, then ascending ID):
+A2 | score=1 | matched words: laser
+B1 | score=1 | matched words: laser
+T1 | score=1 | matched words: laser
+A1 | score=0 | matched words: (none)
+B2 | score=0 | matched words: (none)
+T2 | score=0 | matched words: (none)
+
+Selected passages:
+[A2] access.txt | score=1
+The laser room requires two trained people to be present whenever the laser is operating, including during general laboratory access hours.
+
+[B1] booking.txt | score=1
+Laser room bookings are limited to two hours per session. Reserve the room through the equipment calendar.
+
+[T1] training.txt | score=1
+Laser training must be renewed every 12 months. A current training record is required before operating the laser.
+
+
+Embedding retrieval: k=3; questions in order Q1, Q2, Q3, Q4
+Environment: prepared Python interpreter with identical requirements.txt packages freshly installed in /private/tmp/ps05-fresh-packages to bypass stalled package-file reads. Cached model and unchanged retriever code, CPU.
+
+Model: sentence-transformers/all-MiniLM-L6-v2
+Device: cpu
+Python: 3.13.3
+sentence-transformers: 6.2.0
+numpy: 2.5.4
+torch: 2.14.1
+transformers: 5.20.2
+huggingface-hub: 2.2.0
+Document matrix shape: (6, 384)
+Document embeddings computed once and reused for every question in this run.
+All 384 coordinates, not just the displayed 12, are used in retrieval.
+Individual coordinates have no assigned semantic names.
+Calculations use unrounded model output, promoted to float64; rounding is display only.
+Numerical checks use absolute tolerance 1e-06 (relative tolerance 0).
+Document A1 (access.txt) first 12: -0.0039 0.0188 0.0218 -0.0179 -0.0058 -0.0612 -0.0891 0.0321 -0.0584 0.0111 0.0031 -0.0123
+Document A1 (access.txt) length: 1.0000000971 (approximately 1: PASS)
+Document A2 (access.txt) first 12: 0.0298 -0.0435 -0.0289 0.0303 -0.0507 -0.0310 0.0361 -0.0391 -0.0322 -0.0424 0.0498 0.0019
+Document A2 (access.txt) length: 1.0000000409 (approximately 1: PASS)
+Document T1 (training.txt) first 12: 0.0063 -0.0708 0.0345 0.0146 -0.1167 -0.0114 -0.0708 -0.0761 -0.0806 -0.0767 0.0325 0.1357
+Document T1 (training.txt) length: 0.9999999532 (approximately 1: PASS)
+Document T2 (training.txt) first 12: 0.0447 -0.0044 0.0042 -0.0058 0.0211 -0.0151 -0.0108 -0.0301 -0.0191 -0.0234 0.0280 -0.0367
+Document T2 (training.txt) length: 1.0000000234 (approximately 1: PASS)
+Document B1 (booking.txt) first 12: 0.0856 -0.0417 -0.0194 0.0377 -0.0668 -0.0053 -0.0260 -0.0618 -0.0186 -0.0023 -0.0050 0.0659
+Document B1 (booking.txt) length: 1.0000000197 (approximately 1: PASS)
+Document B2 (booking.txt) first 12: 0.0673 0.0924 -0.0079 0.0634 -0.0105 0.0043 -0.0020 -0.0750 0.0667 0.0378 -0.0040 0.0335
+Document B2 (booking.txt) length: 1.0000000787 (approximately 1: PASS)
+
+Question: May a trained graduate student operate the laser alone at 19:00?
+k: 3
+Question vector shape: (384,)
+Question first 12: 0.0485 0.0060 -0.0148 -0.0017 -0.0642 -0.0427 0.0008 -0.0575 -0.0771 -0.0306 0.0749 0.0967
+Question length: 1.0000000343 (approximately 1: PASS)
+
+All six scores (descending, ties by ascending ID):
+A2 | dot=0.6864456878 | direct cosine=0.6864456361
+T1 | dot=0.5819528175 | direct cosine=0.5819528248
+B1 | dot=0.5326960339 | direct cosine=0.5326960052
+A1 | dot=0.3742489069 | direct cosine=0.3742488577
+T2 | dot=0.2704522332 | direct cosine=0.2704522176
+B2 | dot=0.1287396146 | direct cosine=0.1287396000
+Dot/cosine agreement: PASS; max difference=5.16168217057e-08
+
+Coordinate calculation for top passage A2:
+ 1: 0.0485 * 0.0298 = 0.0014
+ 2: 0.0060 * -0.0435 = -0.0003
+ 3: -0.0148 * -0.0289 = 0.0004
+ 4: -0.0017 * 0.0303 = -0.0001
+ 5: -0.0642 * -0.0507 = 0.0033
+ 6: -0.0427 * -0.0310 = 0.0013
+ 7: 0.0008 * 0.0361 = 0.0000
+ 8: -0.0575 * -0.0391 = 0.0023
+ 9: -0.0771 * -0.0322 = 0.0025
+10: -0.0306 * -0.0424 = 0.0013
+11: 0.0749 * 0.0498 = 0.0037
+12: 0.0967 * 0.0019 = 0.0002
+Subtotal coordinates 1-12: 0.0161115004
+Subtotal coordinates 13-384: 0.6703341874
+Full similarity (all 384 products): 0.6864456878
+Coordinate-sum/dot-product agreement: PASS
+
+Selected passages (top k, no relevance threshold):
+[A2] access.txt | score=0.6864456878
+The laser room requires two trained people to be present whenever the laser is operating, including during general laboratory access hours.
+
+[T1] training.txt | score=0.5819528175
+Laser training must be renewed every 12 months. A current training record is required before operating the laser.
+
+[B1] booking.txt | score=0.5326960339
+Laser room bookings are limited to two hours per session. Reserve the room through the equipment calendar.
+
+
+Question: Can I use the laser without another person present?
+k: 3
+Question vector shape: (384,)
+Question first 12: -0.0378 -0.0049 -0.0282 -0.0339 -0.0531 -0.0218 0.1002 -0.0135 -0.0502 -0.0710 0.0827 0.0600
+Question length: 0.9999999857 (approximately 1: PASS)
+
+All six scores (descending, ties by ascending ID):
+A2 | dot=0.5851933325 | direct cosine=0.5851933170
+T1 | dot=0.4347606030 | direct cosine=0.4347606295
+B1 | dot=0.4253561416 | direct cosine=0.4253561393
+T2 | dot=0.1907539128 | direct cosine=0.1907539111
+B2 | dot=0.0576230445 | direct cosine=0.0576230408
+A1 | dot=0.0356361195 | direct cosine=0.0356361165
+Dot/cosine agreement: PASS; max difference=2.65499765506e-08
+
+Coordinate calculation for top passage A2:
+ 1: -0.0378 * 0.0298 = -0.0011
+ 2: -0.0049 * -0.0435 = 0.0002
+ 3: -0.0282 * -0.0289 = 0.0008
+ 4: -0.0339 * 0.0303 = -0.0010
+ 5: -0.0531 * -0.0507 = 0.0027
+ 6: -0.0218 * -0.0310 = 0.0007
+ 7: 0.1002 * 0.0361 = 0.0036
+ 8: -0.0135 * -0.0391 = 0.0005
+ 9: -0.0502 * -0.0322 = 0.0016
+10: -0.0710 * -0.0424 = 0.0030
+11: 0.0827 * 0.0498 = 0.0041
+12: 0.0600 * 0.0019 = 0.0001
+Subtotal coordinates 1-12: 0.0152441995
+Subtotal coordinates 13-384: 0.5699491330
+Full similarity (all 384 products): 0.5851933325
+Coordinate-sum/dot-product agreement: PASS
+
+Selected passages (top k, no relevance threshold):
+[A2] access.txt | score=0.5851933325
+The laser room requires two trained people to be present whenever the laser is operating, including during general laboratory access hours.
+
+[T1] training.txt | score=0.4347606030
+Laser training must be renewed every 12 months. A current training record is required before operating the laser.
+
+[B1] booking.txt | score=0.4253561416
+Laser room bookings are limited to two hours per session. Reserve the room through the equipment calendar.
+
+
+Question: How frequently must I refresh my laser qualification?
+k: 3
+Question vector shape: (384,)
+Question first 12: 0.0380 -0.0875 0.0199 0.0502 -0.0631 -0.0597 -0.0213 -0.0518 -0.0799 -0.0435 -0.0137 0.0732
+Question length: 1.0000000084 (approximately 1: PASS)
+
+All six scores (descending, ties by ascending ID):
+T1 | dot=0.7420273786 | direct cosine=0.7420274071
+B1 | dot=0.4711952400 | direct cosine=0.4711952267
+A2 | dot=0.4492573944 | direct cosine=0.4492573723
+A1 | dot=0.2363271791 | direct cosine=0.2363271542
+B2 | dot=0.1473102232 | direct cosine=0.1473102104
+T2 | dot=0.0409516255 | direct cosine=0.0409516242
+Dot/cosine agreement: PASS; max difference=2.84954680962e-08
+
+Coordinate calculation for top passage T1:
+ 1: 0.0380 * 0.0063 = 0.0002
+ 2: -0.0875 * -0.0708 = 0.0062
+ 3: 0.0199 * 0.0345 = 0.0007
+ 4: 0.0502 * 0.0146 = 0.0007
+ 5: -0.0631 * -0.1167 = 0.0074
+ 6: -0.0597 * -0.0114 = 0.0007
+ 7: -0.0213 * -0.0708 = 0.0015
+ 8: -0.0518 * -0.0761 = 0.0039
+ 9: -0.0799 * -0.0806 = 0.0064
+10: -0.0435 * -0.0767 = 0.0033
+11: -0.0137 * 0.0325 = -0.0004
+12: 0.0732 * 0.1357 = 0.0099
+Subtotal coordinates 1-12: 0.0406328282
+Subtotal coordinates 13-384: 0.7013945504
+Full similarity (all 384 products): 0.7420273786
+Coordinate-sum/dot-product agreement: PASS
+
+Selected passages (top k, no relevance threshold):
+[T1] training.txt | score=0.7420273786
+Laser training must be renewed every 12 months. A current training record is required before operating the laser.
+
+[B1] booking.txt | score=0.4711952400
+Laser room bookings are limited to two hours per session. Reserve the room through the equipment calendar.
+
+[A2] access.txt | score=0.4492573944
+The laser room requires two trained people to be present whenever the laser is operating, including during general laboratory access hours.
+
+
+Question: What is the laser wavelength?
+k: 3
+Question vector shape: (384,)
+Question first 12: 0.0241 -0.0074 -0.0795 0.0196 -0.0920 -0.0008 0.0842 0.0203 -0.0357 -0.0252 0.0360 -0.0204
+Question length: 0.9999999451 (approximately 1: PASS)
+
+All six scores (descending, ties by ascending ID):
+T1 | dot=0.3477212227 | direct cosine=0.3477212580
+A2 | dot=0.3208271317 | direct cosine=0.3208271362
+B1 | dot=0.3115009478 | direct cosine=0.3115009587
+A1 | dot=0.0579507259 | direct cosine=0.0579507234
+B2 | dot=-0.0434969724 | direct cosine=-0.0434969714
+T2 | dot=-0.0544881293 | direct cosine=-0.0544881310
+Dot/cosine agreement: PASS; max difference=3.53533427533e-08
+
+Coordinate calculation for top passage T1:
+ 1: 0.0241 * 0.0063 = 0.0002
+ 2: -0.0074 * -0.0708 = 0.0005
+ 3: -0.0795 * 0.0345 = -0.0027
+ 4: 0.0196 * 0.0146 = 0.0003
+ 5: -0.0920 * -0.1167 = 0.0107
+ 6: -0.0008 * -0.0114 = 0.0000
+ 7: 0.0842 * -0.0708 = -0.0060
+ 8: 0.0203 * -0.0761 = -0.0015
+ 9: -0.0357 * -0.0806 = 0.0029
+10: -0.0252 * -0.0767 = 0.0019
+11: 0.0360 * 0.0325 = 0.0012
+12: -0.0204 * 0.1357 = -0.0028
+Subtotal coordinates 1-12: 0.0046756776
+Subtotal coordinates 13-384: 0.3430455451
+Full similarity (all 384 products): 0.3477212227
+Coordinate-sum/dot-product agreement: PASS
+
+Selected passages (top k, no relevance threshold):
+[T1] training.txt | score=0.3477212227
+Laser training must be renewed every 12 months. A current training record is required before operating the laser.
+
+[A2] access.txt | score=0.3208271317
+The laser room requires two trained people to be present whenever the laser is operating, including during general laboratory access hours.
+
+[B1] booking.txt | score=0.3115009478
+Laser room bookings are limited to two hours per session. Reserve the room through the equipment calendar.
+

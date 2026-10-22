@@ -1,0 +1,5 @@
+question_id,keyword_top_ids,keyword_scores,embedding_top_ids,embedding_scores,required_ids,keyword_evidence_complete,embedding_evidence_complete,observation
+Q1,A1;A2,3;2,A2;T1,0.6864456878;0.5819528175,A1;A2,,,
+Q2,A2;B1,2;1,A2;T1,0.5851933325;0.4347606030,A2,,,
+Q3,T1;A2,2;1,T1;B1,0.7420273786;0.4711952400,T1,,,
+Q4,A2;B1,1;1,T1;A2,0.3477212227;0.3208271317,absent,,,

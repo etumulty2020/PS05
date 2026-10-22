@@ -1,0 +1,18 @@
+Question: May a trained graduate student operate the laser alone at 19:00?
+k: 2
+
+All chunk scores (descending score, then ascending ID):
+A1 | score=3 | matched words: 00, graduate, trained
+A2 | score=2 | matched words: laser, trained
+B1 | score=1 | matched words: laser
+T1 | score=1 | matched words: laser
+T2 | score=1 | matched words: trained
+B2 | score=0 | matched words: (none)
+
+Selected passages:
+[A1] access.txt | score=3
+General laboratory access hours are 08:00 to 22:00 for trained graduate students. Access outside these hours requires written approval from the lab manager.
+
+[A2] access.txt | score=2
+The laser room requires two trained people to be present whenever the laser is operating, including during general laboratory access hours.
+

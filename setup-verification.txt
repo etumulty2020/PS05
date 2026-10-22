@@ -1,0 +1,13 @@
+Setup verification: PASS
+Python: 3.13.3
+Platform: macOS-26.6.2-arm64-arm-64bit-Mach-O
+Model: sentence-transformers/all-MiniLM-L6-v2
+Device: cpu
+sentence-transformers: 6.2.0
+numpy: 2.5.4
+torch: 2.14.1
+transformers: 5.20.2
+huggingface-hub: 2.2.0
+Smoke-test embedding shape: (1, 384)
+Smoke-test vector norm: 1.000000
+This smoke test is setup evidence, not an assignment retrieval run.
